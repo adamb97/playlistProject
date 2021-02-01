@@ -2,28 +2,28 @@ package sample;
 
 public class SimpleLinkedList<T> {
     Node head;
-    static class Node {
-        Song data;
+
+    class Node<T> {
+        T data;
         Node next;
 
-        Node(Song s){
+        Node(T s){
             data = s;
             next = null;
         }
     }
-    public SimpleLinkedList insertSong(SimpleLinkedList list, Song song){
-        Node newNode = new Node(song);
-        newNode.next = null;
+    public SimpleLinkedList insertNode(SimpleLinkedList list, Node node){
+        node.next = null;
 
 
         if(list.head == null){
-            list.head = newNode;
+            list.head = node;
         } else {
             Node lastNode = list.head;
             while(lastNode.next != null){
                 lastNode = lastNode.next;
             }
-            lastNode.next = newNode;
+            lastNode.next = node;
         }
 
         return list;
@@ -40,7 +40,7 @@ public class SimpleLinkedList<T> {
         System.out.println("List: ");
 
         while(currentNode !=null){
-            System.out.print(currentNode.data.getTitle() + " ");
+            System.out.print(currentNode.data+ " ");
 
             currentNode = currentNode.next;
         }

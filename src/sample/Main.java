@@ -34,8 +34,8 @@ public class Main extends Application implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         if(actionEvent.getSource() == btn1){
             Song wakeUp = new Song("Wake up", "Arcade Fire", 4.3, 2005);
-            SimpleLinkedList s1 = new SimpleLinkedList();
-            s1.insertSong(s1, wakeUp);
+            Playlist s1 = new Playlist();
+            s1.addSong(wakeUp);
 
             s1.printList(s1);
         }
